@@ -3,7 +3,7 @@ import { PomodoroTimer } from "./components/pomodoro-timer";
 function App() {
   return (
     <div className="App">
-      <PomodoroTimer defaultPomodoroTimer={1500} />
+      <PomodoroTimer defaultPomodoroTimer={3660} />
     </div>
   );
 }
