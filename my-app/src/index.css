@@ -29,6 +29,10 @@ body {
   background: var(--color-1);
 }
 
+.gray {
+  background: #000000;
+}
+
 .hidden {
   display: none;
 }
