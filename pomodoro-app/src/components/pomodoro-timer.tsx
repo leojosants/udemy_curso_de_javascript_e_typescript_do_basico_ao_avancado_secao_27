@@ -1,8 +1,7 @@
-//disable- no-unused-vars
-
 import React from "react";
 import { useInterval } from "../hooks/use-interval";
-import { secondToTime } from "../utils/seconds-to-time";
+import { Button } from "./button";
+import { Timer } from "./timer";
 
 interface Props {
   defaultPomodoroTimer: number;
@@ -16,6 +15,13 @@ export function PomodoroTimer(props: Props): JSX.Element {
   }, 1000);
 
   return (
-    <div>Olá, Mundo Pomodoro {secondToTime(mainTime)}</div>
+    <div className="pomodoro">
+      <h2>You are working</h2>
+      <Timer mainTime={mainTime} />
+      <Button
+        text="teste"
+        onclick={() => console.log('clicou')}
+      />
+    </div>
   );
 }
