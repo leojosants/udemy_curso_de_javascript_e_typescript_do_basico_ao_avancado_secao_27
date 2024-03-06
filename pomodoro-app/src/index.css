@@ -35,6 +35,7 @@ body {
 
 .isHidden {
   display: none;
+  transition: .4s;
 }
 
 .c-pomodoro {

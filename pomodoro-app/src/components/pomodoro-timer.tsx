@@ -14,10 +14,15 @@ export function PomodoroTimer(props: Props): JSX.Element {
   const [mainTime, setMainTime] = React.useState(props.pomodoroTimer);
   const [timeCouting, setTimeCouting] = React.useState(false);
   const [working, setWorking] = React.useState(false);
+  const [resting, setResting] = React.useState(false);
 
   React.useEffect(() => {
     if (working) {
       document.body.classList.add('isWorking');
+    }
+
+    if (resting) {
+      document.body.classList.remove('isWorking');
     }
   }, [working]);
 
@@ -28,6 +33,21 @@ export function PomodoroTimer(props: Props): JSX.Element {
   const configureWork = () => {
     setTimeCouting(true);
     setWorking(true);
+    setResting(false);
+    setMainTime(props.pomodoroTimer);
+  };
+
+  const configureRest = (long: boolean) => {
+    setTimeCouting(true);
+    setWorking(false);
+    setResting(true);
+
+    if (long) {
+      setMainTime(props.longRestTime);
+    }
+    else {
+      setMainTime(props.shortRestTime);
+    }
   };
 
   return (
@@ -42,10 +62,11 @@ export function PomodoroTimer(props: Props): JSX.Element {
           onclick={() => configureWork()}
         />
         <Button
-          text="teste"
-          onclick={() => console.log('clicou')}
+          text="Rest"
+          onclick={() => configureRest(false)}
         />
         <Button
+          className={!working && !resting ? 'isHidden' : ''}
           text={timeCouting ? "Pause" : "Play"}
           onclick={() => setTimeCouting(!timeCouting)}
         />
