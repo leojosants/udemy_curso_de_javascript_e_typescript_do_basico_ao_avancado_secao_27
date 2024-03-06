@@ -18,11 +18,31 @@ A versão original da técnica envolve seis passos:
 
 2. Ajustar o cronômetro para o tempo desejado (geralmente 25 minutos);
 
-3. Trabalhar na tarefa escolhida até que o alarme toque. Se alguma distração importante surgir, anotá-la e voltar o foco de novo à tarefa;
-Quando o alarme tocar, fazer uma marcação em um papel para contabilizar a quantidade de intervalos.
+3. Trabalhar na tarefa escolhida até que o alarme toque.
+    - Se alguma distração importante surgir, anotá-la e voltar o foco de novo à tarefa;
+
+    - Quando o alarme tocar, fazer uma marcação em um papel para contabilizar a quantidade de intervalos.
 
 4. Se houver menos de 4 marcações, fazer uma pausa curta (3-5 minutos);
 
 5. Depois da quarta marcação, fazer uma pausa mais longa (20-30 minutos), zerando a contagem de marcações e retornando ao passo 1.
 
 6. É referido que se deve dar o nome de pomodoro ao período de tempo de trabalho.
+
+## Executar projeto
+
+- Faça download ou realize clone.
+
+- Abra o terminal e navegue até ```pomodoro-app``` (diretório)
+
+  - Para instalar as dependências digite o comando:
+
+  ```
+  npm i
+  ```
+
+  - Para iniciar a aplicação no browser digite o comando:
+
+  ```
+  npm start
+  ```
