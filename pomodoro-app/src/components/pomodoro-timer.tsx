@@ -12,10 +12,23 @@ interface Props {
 
 export function PomodoroTimer(props: Props): JSX.Element {
   const [mainTime, setMainTime] = React.useState(props.pomodoroTimer);
+  const [timeCouting, setTimeCouting] = React.useState(false);
+  const [working, setWorking] = React.useState(false);
+
+  React.useEffect(() => {
+    if (working) {
+      document.body.classList.add('isWorking');
+    }
+  }, [working]);
 
   useInterval(() => {
     setMainTime(mainTime - 1);
-  }, 1000);
+  }, timeCouting ? 1000 : null);
+
+  const configureWork = () => {
+    setTimeCouting(true);
+    setWorking(true);
+  };
 
   return (
     <div className="c-pomodoro">
@@ -25,16 +38,16 @@ export function PomodoroTimer(props: Props): JSX.Element {
 
       <div className="c-pomodoro__controls">
         <Button
-          text="teste"
-          onclick={() => console.log('clicou')}
+          text="Work"
+          onclick={() => configureWork()}
         />
         <Button
           text="teste"
           onclick={() => console.log('clicou')}
         />
         <Button
-          text="teste"
-          onclick={() => console.log('clicou')}
+          text={timeCouting ? "Pause" : "Play"}
+          onclick={() => setTimeCouting(!timeCouting)}
         />
       </div>
 
