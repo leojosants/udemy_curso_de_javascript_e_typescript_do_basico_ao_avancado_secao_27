@@ -6,7 +6,5 @@ interface Props {
 }
 
 export function Timer(props: Props): JSX.Element {
-  return (
-    <div className="timer">{secondToTime(props.mainTime)}</div>
-  );
+  return <div className="c-pomodoro__timer">{secondToTime(props.mainTime)}</div>;
 }
