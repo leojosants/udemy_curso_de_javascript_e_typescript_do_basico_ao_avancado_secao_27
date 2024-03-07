@@ -101,8 +101,23 @@ body {
 }
 
 .c-pomodoro .c-pomodoro__details {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
   margin-top: 20px;
   margin-right: 0;
   margin-bottom: 20px;
   margin-left: 0;
+}
+
+.c-pomodoro .c-pomodoro__details span {
+  font-size: 20px;
+}
+
+.c-pomodoro .c-pomodoro__cycles {
+  margin-left: 39px;
+}
+
+.c-pomodoro .c-pomodoro__hours {
+  margin-left: 32px;
 }
